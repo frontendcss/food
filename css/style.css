@@ -377,8 +377,12 @@ body::before {
 	justify-content: space-around;
 }
 
-.food-list_item a{
+.food-list_item{
 	border-radius: 10px;
+}
+
+.food-list_item a{
+	
 	display: flex;
 	width: 240px;
 	flex-direction: column;
