@@ -382,7 +382,7 @@ body::before {
 }
 
 .food-list_item a{
-	border-radius: 30px;
+	border-radius: 0 0 30px 30px;
 	display: flex;
 	width: 240px;
 	flex-direction: column;
