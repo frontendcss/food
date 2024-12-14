@@ -391,6 +391,10 @@ body::before {
 	transition: background-color 0.6s ease, transform 0.6s ease;
 }
 
+.food-list_item img{
+	border-radius: 20px 20px 0 0;
+}
+
 .food-list_item a:hover{
 	transform: scale(1.01);
 	box-shadow: #fd8b44 1px 1px 20px;
@@ -401,6 +405,7 @@ body::before {
 	padding: 7px;
 	height: 30px;
 	text-align: center;
+	border-radius: 0 0 20px 20px;
 }
 
 
