@@ -55,7 +55,7 @@ body::before {
 	background-color: #fff;
 	height: 160px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-around;
 	align-items: flex-end;
 }
@@ -189,6 +189,7 @@ body::before {
 .main-content{
 	display: flex;
 	justify-content: space-between;
+	flex-direction: column;
 }
 
 .left-bar{
@@ -377,12 +378,7 @@ body::before {
 	justify-content: space-around;
 }
 
-.food-list_item{
-	border-radius: 30px;
-}
-
 .food-list_item a{
-	border-radius: 0 0 30px 30px;
 	display: flex;
 	width: 240px;
 	flex-direction: column;
@@ -392,10 +388,6 @@ body::before {
 	border: 1px solid #fd8b44;
 	box-shadow: #a4a4a4 1px 1px 8px;
 	transition: background-color 0.6s ease, transform 0.6s ease;
-}
-
-.food-list_item img{
-	border-radius: 30px;
 }
 
 .food-list_item a:hover{
@@ -408,7 +400,6 @@ body::before {
 	padding: 7px;
 	height: 30px;
 	text-align: center;
-	border-radius: 30px;
 }
 
 
@@ -458,12 +449,14 @@ body::before {
 }
 
 .main-footer{
-	background-image: url(../img/uncooked-pasta-red-tomatoes-basil-leaves-peppercorns-yellow-background-ingredients-preparing-delicious-pasta-traditional-italian-food-cuisine-products-cooking-top-view_273609-38153.jpg);
-	background-size: cover;
-	background-position: 0-295px;;
+	background-color: #fd8b44;
+	background-image: url(../img/pattern.png);
+	background-size: contain;
+	/*background-position: 0-295px;;*/
 	display: flex;
+	flex-direction: column;
 	justify-content: space-around;
-	height: 200px;
+	min-height: 200px;
 	margin-bottom: 30px;
 	box-shadow: inset #7f7d7d 0px 0px 27px;
 }
@@ -486,5 +479,16 @@ body::before {
 }
 
 
+@media screen and (min-width: 900px) {
+	.main-header{
+		flex-direction: row;
+	}
+	.main-content{
+	flex-direction: row;
+	}
 
+	.main-footer{
+	flex-direction: row;
+	}
+}
 
