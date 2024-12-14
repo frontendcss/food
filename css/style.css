@@ -1,0 +1,470 @@
+html, body {
+	margin: 0;
+	margin-bottom: 40px;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	font-family: monospace;
+	position: relative;
+	padding-top: 40px;
+	overflow-x: hidden; /* Избегаем горизонтальной прокрутки */
+}
+
+body::before {
+	content: '';
+	position: fixed; /* Закрепляем фон */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(
+			at 98.7% 28.2%, 
+			hsl(192deg 19.54% 50.55%) 0%, 
+			hsla(0, 0%, 100%, 0) 100%
+		),
+		radial-gradient(
+			at 25.3% 85.8%, 
+			hsla(192, 42.25%, 27.84%, 1) 0%, 
+			hsla(192, 42.25%, 27.84%, 0) 100%
+		),
+		radial-gradient(
+			at 37.8% 5.8%, 
+			hsla(0, 0%, 100%, 1) 0%, 
+			hsl(64.91deg 100% 81.11%) 100%
+		);
+	background-repeat: repeat-y; /* Повторяем градиент по вертикали */
+	background-size: cover; /* Гарантируем покрытие экрана */
+	z-index: -1; /* Фон за содержимым */
+}
+
+.all-block {
+	background-color: #fff;
+	max-width: 1200px;
+	width: 100%;
+	height: auto; /* Высота зависит от контента */
+	margin: 0 auto;
+	box-shadow: #dedede 0 0 15px;
+	padding: 1px 0;
+}
+
+
+.main-header{
+	background-color: #fff;
+	height: 160px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: flex-end;
+}
+
+.main-logo,
+.search-container,
+.profile{
+	align-self: center;
+}
+
+.main-logo{
+	font-weight: bold;
+	font-size: 38px;
+	margin: 0;
+}
+
+.animate-charcter
+{
+	text-transform: uppercase;
+	background-image: linear-gradient(
+		225deg,
+		#231557 0%,
+		#f85f00 29%,
+		#ff1361 67%,
+		#fff800 100%
+	);
+	background-size: auto auto;
+	background-clip: border-box;
+	background-size: 200% auto;
+	color: #fff;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: textclip 2s linear infinite;
+	display: inline-block;
+}
+
+@keyframes textclip {
+	to {
+		background-position: -200% center;
+	}
+}
+
+
+
+.search-container {
+	background-color: #fd8b44;
+	padding: 2px;
+	display: flex;
+	align-items: center;
+	border-radius: 5px;
+	transition: background-color 0.6s ease, transform 0.6s ease;
+}
+
+.search-input {
+ width: 300px;
+ padding: 10px;
+ border: 1px solid #ccc;
+ border-radius: 5px 0 0 5px;
+ outline: none;
+ margin-right: 5px;
+}
+
+.filter-button {
+ background-color: #fd8b44;
+ border: none;
+ color: white;
+ padding: 10px 20px;
+ border-radius: 0 5px 5px 0;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+}
+
+.search-container:hover {
+ box-shadow: #fd8b44 0 0 10px;
+}
+
+
+.profile{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 10px 20px;
+}
+
+.notification-icon {
+ margin-right: 20px;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+}
+
+.notification-icon svg {
+ width: 24px;
+ height: 24px;
+ fill: #444;
+}
+
+.user-profile {
+ display: flex;
+ align-items: center;
+ padding: 5px 10px;
+ background-color: #edf1f5;
+ border: 1px solid #ddd;
+ border-radius: 10px;
+ cursor: pointer;
+}
+
+.user-profile img {
+ width: 30px;
+ height: 30px;
+ border-radius: 50%;
+ margin-right: 10px;
+}
+
+.user-profile span {
+ font-size: 16px;
+ font-weight: 500;
+ margin-right: 5px;
+ color: #444;
+}
+
+.user-profile svg {
+ width: 12px;
+ height: 12px;
+ fill: #444;
+}
+
+.main-content{
+	display: flex;
+	justify-content: space-between;
+}
+
+.left-bar{
+	background-color: #fff;
+	min-width: 250px;
+	padding: 0 20px;
+}
+
+.left-bar_list{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.left-bar_item{
+	background-color: #fd8b44;
+	display: block;
+	height: 40px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	padding-left: 20px;
+	line-height: 40px;
+	list-style: none;
+	color: #fff;
+	text-decoration: none;
+}
+
+.left-bar_item i{
+	margin-right: 15px;
+}
+
+.center-bar{
+	background-color: #edf1f5;
+	display: flex;
+	width: 100%;
+}
+
+.center-bar_content{
+	min-width: 420px;
+	flex-grow: 1;
+	padding: 10px;
+	box-shadow: inset #adadad 0px 0px 8px;
+}
+
+.center-title{
+	margin: 0 0 10px 5px;
+	color: #fd8b44;
+}
+
+.center-menu_list{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.center-menu_item{
+	background-color: #14a259;
+	/*background-color: #fd8b44;*/
+	display: block;
+	margin-bottom: 10px;
+	padding-left: 50px;
+	width: 140px;
+	height: 50px;
+	border-radius: 10px;
+	line-height: 50px;
+	list-style: none;
+	color: #000;
+	text-decoration: none;
+	box-shadow: #ccc 2px 4px 4px;
+	color: #fff;
+	transition: background-color 0.6s ease, transform 0.6s ease;
+}
+
+.center-menu_item:hover{
+	box-shadow: #fd8b44 0 0 10px;
+	transform: scale(1.03); /* Увеличение элемента */
+}
+
+.center-menu_item.icon-1 {
+	background-image: url('../img/icon/download.svg');
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	background-position: 6px 5px;
+}
+
+.center-menu_item.icon-2 {
+	background-image: url('../img/icon/download-1.svg');
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	background-position: 6px 5px;
+}
+
+.center-menu_item.icon-3 {
+	background-image: url('../img/icon/download-2.svg');
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	background-position: 6px 5px;
+}
+
+.center-menu_item.icon-4 {
+	background-image: url('../img/icon/download-3.svg');
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	background-position: 6px 5px;
+}
+
+.center-menu_item.icon-5 {
+	background-image: url('../img/icon/download-4.svg');
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	background-position: 6px 5px;
+}
+
+.center-menu_item.icon-6 {
+	background-image: url('../img/icon/download-5.svg');
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	background-position: 6px 5px;
+}
+
+.center-menu_item.icon-7 {
+	background-image: url('../img/icon/download-6.svg');
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	background-position: 6px 5px;
+}
+
+.center-menu_item.icon-8 {
+	background-image: url('../img/icon/download-7.svg');
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	background-position: 6px 5px;
+}
+
+.center-menu_item.icon-9 {
+	background-image: url('../img/icon/download-8.svg');
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	background-position: 6px 5px;
+}
+
+.center-menu_item.icon-10 {
+	background-image: url('../img/icon/download-9.svg');
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	background-position: 6px 5px;
+}
+
+.center-menu_item.icon-11 {
+	background-image: url('../img/icon/download-10.svg');
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	background-position: 6px 5px;
+}
+
+.center-menu_item.icon-12 {
+	background-image: url('../img/icon/download-11.svg');
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	background-position: 6px 5px;
+}
+
+.center-menu_item.icon-13 {
+	background-image: url('../img/icon/download-12.svg');
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	background-position: 6px 5px;
+}
+
+
+.food-list{
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	padding: 0;
+	justify-content: space-around;
+}
+
+.food-list_item a{
+	display: flex;
+	width: 240px;
+	flex-direction: column;
+	margin-bottom: 20px;
+	text-decoration: none;
+	color: #fff;
+	border: 1px solid #fd8b44;
+	box-shadow: #a4a4a4 1px 1px 8px;
+	transition: background-color 0.6s ease, transform 0.6s ease;
+}
+
+.food-list_item a:hover{
+	transform: scale(1.01);
+	box-shadow: #fd8b44 1px 1px 20px;
+}
+
+.food-list_item span{
+	background-color: #fd8b44;
+	padding: 7px;
+	height: 30px;
+	text-align: center;
+}
+
+
+.right-bar{
+	min-width: 250px;
+	padding: 0 20px;
+}
+
+.title {
+	text-align: center;
+	color: #FFF;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	/*height: 100vh;*/
+	letter-spacing: 1px;
+	line-height:2
+}
+
+.title h3 {
+	background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	font-size: 15px;
+	margin: 10px 0;
+}
+
+.white-mode {
+	text-decoration: none;
+	padding: 7px 10px;
+	background-color: #122;
+	border-radius: 3px;
+	color: #FFF;
+	transition: .35s ease-in-out;
+	position: absolute;
+	left: 15px;
+	bottom: 15px;
+}
+
+.white-mode:hover {
+	background-color: #FFF;
+	color: #122;
+}
+
+.main-footer{
+	background-image: url(../img/uncooked-pasta-red-tomatoes-basil-leaves-peppercorns-yellow-background-ingredients-preparing-delicious-pasta-traditional-italian-food-cuisine-products-cooking-top-view_273609-38153.jpg);
+	background-size: cover;
+	background-position: 0-295px;;
+	display: flex;
+	justify-content: space-around;
+	height: 200px;
+	margin-bottom: 30px;
+	box-shadow: inset #7f7d7d 0px 0px 27px;
+}
+
+.main-footer ul{
+	font-size: 16px;
+	list-style: none;
+	margin-right: 75px;
+	color: #fff;
+	text-shadow: 1px 1px #bababa;
+}
+
+.main-footer ul a{
+	text-decoration: none;
+	color: #fff;
+}
+
+
+
+
