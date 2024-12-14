@@ -378,7 +378,7 @@ body::before {
 }
 
 .food-list_item{
-	border-radius: 10px;
+	border-radius: 30px;
 }
 
 .food-list_item a{
@@ -404,6 +404,7 @@ body::before {
 	padding: 7px;
 	height: 30px;
 	text-align: center;
+	border-radius: 30px;
 }
 
 
