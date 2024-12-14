@@ -378,7 +378,7 @@ body::before {
 }
 
 .food-list_item{
-	
+	border-radius: 30px;
 }
 
 .food-list_item a{
