@@ -450,7 +450,7 @@ body::before {
 
 .main-footer{
 	background-color: #fd8b44;
-	background-image: url(../img/pattern.png);
+/* 	background-image: url(../img/pattern.png); */
 	background-size: contain;
 	/*background-position: 0-295px;;*/
 	display: flex;
