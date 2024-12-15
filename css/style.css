@@ -9,7 +9,7 @@ html, body {
 body {
 	font-family: monospace;
 	position: relative;
-	padding-top: 40px;
+	padding-top: 0;
 	overflow-x: hidden; /* Избегаем горизонтальной прокрутки */
 }
 
@@ -112,7 +112,7 @@ body::before {
 }
 
 .search-input {
- width: 300px;
+ /*width: 300px;*/
  padding: 10px;
  border: 1px solid #ccc;
  border-radius: 5px 0 0 5px;
@@ -235,7 +235,7 @@ body::before {
 }
 
 .center-bar_content{
-	min-width: 420px;
+	/*min-width: 420px;*/
 	flex-grow: 1;
 	padding: 10px;
 	box-shadow: inset #adadad 0px 0px 8px;
@@ -495,5 +495,16 @@ body::before {
 
 	.main-footer{
 	flex-direction: row;
+	}
+}
+
+
+@media screen and (min-width: 500px) {
+	body{
+		padding-top: 40px;
+	}
+
+	.search-input{
+		width: 300px;
 	}
 }
